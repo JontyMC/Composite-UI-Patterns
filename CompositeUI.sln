@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Regions", "Regions\Regions.csproj", "{BEF50F34-B491-4F49-BE15-B66153B1469E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Screens", "Screens\Screens.csproj", "{2B7D2FF7-D91D-450D-A836-58744818F28B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conductor", "Conductor\Conductor.csproj", "{CD05D184-2CC4-4920-BD76-A085E02F76F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEF50F34-B491-4F49-BE15-B66153B1469E}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{BEF50F34-B491-4F49-BE15-B66153B1469E}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{BEF50F34-B491-4F49-BE15-B66153B1469E}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{BEF50F34-B491-4F49-BE15-B66153B1469E}.Debug|x86.ActiveCfg = Debug|x86
+		{BEF50F34-B491-4F49-BE15-B66153B1469E}.Debug|x86.Build.0 = Debug|x86
+		{BEF50F34-B491-4F49-BE15-B66153B1469E}.Release|Any CPU.ActiveCfg = Release|x86
+		{BEF50F34-B491-4F49-BE15-B66153B1469E}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{BEF50F34-B491-4F49-BE15-B66153B1469E}.Release|Mixed Platforms.Build.0 = Release|x86
+		{BEF50F34-B491-4F49-BE15-B66153B1469E}.Release|x86.ActiveCfg = Release|x86
+		{BEF50F34-B491-4F49-BE15-B66153B1469E}.Release|x86.Build.0 = Release|x86
+		{2B7D2FF7-D91D-450D-A836-58744818F28B}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{2B7D2FF7-D91D-450D-A836-58744818F28B}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{2B7D2FF7-D91D-450D-A836-58744818F28B}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{2B7D2FF7-D91D-450D-A836-58744818F28B}.Debug|x86.ActiveCfg = Debug|x86
+		{2B7D2FF7-D91D-450D-A836-58744818F28B}.Debug|x86.Build.0 = Debug|x86
+		{2B7D2FF7-D91D-450D-A836-58744818F28B}.Release|Any CPU.ActiveCfg = Release|x86
+		{2B7D2FF7-D91D-450D-A836-58744818F28B}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{2B7D2FF7-D91D-450D-A836-58744818F28B}.Release|Mixed Platforms.Build.0 = Release|x86
+		{2B7D2FF7-D91D-450D-A836-58744818F28B}.Release|x86.ActiveCfg = Release|x86
+		{2B7D2FF7-D91D-450D-A836-58744818F28B}.Release|x86.Build.0 = Release|x86
+		{CD05D184-2CC4-4920-BD76-A085E02F76F6}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{CD05D184-2CC4-4920-BD76-A085E02F76F6}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{CD05D184-2CC4-4920-BD76-A085E02F76F6}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{CD05D184-2CC4-4920-BD76-A085E02F76F6}.Debug|x86.ActiveCfg = Debug|x86
+		{CD05D184-2CC4-4920-BD76-A085E02F76F6}.Debug|x86.Build.0 = Debug|x86
+		{CD05D184-2CC4-4920-BD76-A085E02F76F6}.Release|Any CPU.ActiveCfg = Release|x86
+		{CD05D184-2CC4-4920-BD76-A085E02F76F6}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{CD05D184-2CC4-4920-BD76-A085E02F76F6}.Release|Mixed Platforms.Build.0 = Release|x86
+		{CD05D184-2CC4-4920-BD76-A085E02F76F6}.Release|x86.ActiveCfg = Release|x86
+		{CD05D184-2CC4-4920-BD76-A085E02F76F6}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
