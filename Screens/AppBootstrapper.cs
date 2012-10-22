@@ -6,13 +6,11 @@ using Screens.Shell;
 namespace Screens {
     public class AppBootstrapper : Bootstrapper<ShellViewModel> {
         protected override void Configure() {
-            LogManager.GetLog = x => new DebugLogger(x);
+            LogManager.GetLog = x => new DebugLogger();
         }
     }
 
     public class DebugLogger : ILog {
-        public DebugLogger(Type type) {}
-
         static string CreateLogMessage(string format, params object[] args) {
             return string.Format("[{0}] {1}", DateTime.Now.ToString("o"), string.Format(format, args));
         }

@@ -22,11 +22,11 @@ namespace Screens.Twitter {
         }
 
         protected override void OnActivate() {
+            IsBusy = true;
             RefreshTweets();
         }
 
         public void RefreshTweets() {
-            IsBusy = true;
             new WebClient()
                 .DownloadStringTaskAsync("http://search.twitter.com/search.json?q=huddle")
                 .ContinueWith(MapTweets);

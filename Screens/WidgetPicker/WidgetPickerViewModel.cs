@@ -5,7 +5,7 @@ using Screens.WhatsNew;
 namespace Screens.WidgetPicker {
     public class WidgetPickerViewModel : Conductor<object> {
         public WidgetPickerViewModel() {
-            SwitchToWidget1();
+            SwitchToWidget2();
         }
 
         public void SwitchToWidget1() {

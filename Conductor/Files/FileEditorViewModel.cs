@@ -3,16 +3,18 @@ using Caliburn.Micro;
 namespace Conductor.Files {
     public class FileEditorViewModel : Conductor<IFileViewModel>.Collection.OneActive {
         public FileEditorViewModel() {
-            Items.Add(new TextFileViewModel("Some text file 1"));
-            Items.Add(new TextFileViewModel("Some text file 2"));
+            Toolbar = new ToolbarViewModel(this);
+            LoadFiles();
+        }
+
+        public ToolbarViewModel Toolbar { get; private set; }
+
+        public void LoadFiles()
+        {
+            Items.Clear();
+            Items.Add(new TextFileViewModel("Some text file 1", Toolbar));
+            Items.Add(new TextFileViewModel("Some text file 2", Toolbar));
+            Items.Add(new ImageFileViewModel("An image", Toolbar));
         }
     }
-
-    public class TextFileViewModel : Screen, IFileViewModel {
-        public TextFileViewModel(string displayName) {
-            DisplayName = displayName;
-        }
-    }
-
-    public interface IFileViewModel : IHaveDisplayName {}
 }

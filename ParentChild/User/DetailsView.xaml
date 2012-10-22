@@ -1,0 +1,9 @@
+﻿<UserControl x:Class="ParentChild.User.DetailsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="10 10 10 10">
+        <TextBlock Text="{Binding Firstname, StringFormat=Firstname: {0}}"/>
+        <TextBlock Text="{Binding Lastname, StringFormat=Lastname: {0}}"/>
+        <Button x:Name="Edit" Width="150" HorizontalAlignment="Left">Edit</Button>
+    </StackPanel>
+</UserControl>
