@@ -1,0 +1,32 @@
+﻿<Window x:Class="Model.Shell.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowState="Maximized"
+        FontSize="24">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="150"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Background="#1482bd">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="400" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" FontSize="72" Foreground="White" VerticalAlignment="Center" Margin="24,0,0,0" FontWeight="Bold">huddle</TextBlock>
+            <Border Grid.Column="1" BorderThickness="1" BorderBrush="Black" Background="White" Margin="24">
+                <ContentControl x:Name="Widget"/>
+            </Border>
+        </Grid>
+        <Border Grid.Column="0" Grid.Row="1" Background="#eff6fc">
+            <ContentControl x:Name="SideBar" Grid.Column="1"/>
+        </Border>
+        <Border Grid.Column="1" Grid.Row="1" Background="White">
+            <ContentControl x:Name="Main" Grid.Column="1"/>
+        </Border>
+    </Grid>
+</Window>

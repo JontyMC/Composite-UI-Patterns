@@ -1,0 +1,8 @@
+﻿<UserControl x:Class="Model.Shell.AddressBarView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel>
+        <TextBox x:Name="Url" Width="250"/>
+        <Button x:Name="Go" Width="150">Go</Button>
+    </StackPanel>
+</UserControl>
