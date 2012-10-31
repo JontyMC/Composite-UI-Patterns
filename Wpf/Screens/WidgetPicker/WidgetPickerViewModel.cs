@@ -5,15 +5,15 @@ using Screens.WhatsNew;
 namespace Screens.WidgetPicker {
     public class WidgetPickerViewModel : Conductor<object> {
         public WidgetPickerViewModel() {
-            SwitchToWidget2();
+            SwitchToWidget1();
         }
 
         public void SwitchToWidget1() {
-            ActivateItem(new WhatsNewViewModel());
+            ActivateItem(new TwitterFeedViewModel());
         }
 
         public void SwitchToWidget2() {
-            ActivateItem(new TwitterFeedViewModel());
+            ActivateItem(new WhatsNewViewModel());
         }
     }
 }

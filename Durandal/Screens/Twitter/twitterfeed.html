@@ -1,0 +1,6 @@
+<div>
+    <ul data-bind="foreach: tweets, style: { opacity: isBusy ? '1' : '100' }">
+        <li data-bind="css: { alt: $index() % 2 }"><span data-bind="text: text"></span></li>
+    </ul>
+    <img src="images/busy.gif" data-bind="visible: isBusy"/>
+</div>
