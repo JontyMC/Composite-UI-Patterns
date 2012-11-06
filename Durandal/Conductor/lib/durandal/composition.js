@@ -2,7 +2,8 @@
     var viewLocator = require('durandal/viewLocator'),
         viewModelBinder = require('durandal/viewModelBinder'),
         viewEngine = require('durandal/viewEngine'),
-        system = require('durandal/system');
+        system = require('durandal/system'),
+        ko = require('ko');
 
     var binding = {
         switchContent: function(parent, newChild, settings) {

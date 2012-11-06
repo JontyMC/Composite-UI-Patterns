@@ -1,9 +1,9 @@
 /*global require, define */
-define(['widgetpicker/widgetpicker', 'workspaces/myworkspaces', 'search/search'], function (widgetpicker, myworkspaces, search) {
+define(['files/fileEditor', 'workspaces/myWorkspaces', 'search/search'], function (fileEditor, myWorkspaces, search) {
     'use strict';
     return {
-        sidebar: myworkspaces,
-        main: widgetpicker,
+        sidebar: myWorkspaces,
+        main: fileEditor,
         widget: search
     };
 });

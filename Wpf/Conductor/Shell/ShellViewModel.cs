@@ -6,12 +6,15 @@ using Conductor.Workspaces;
 namespace Conductor.Shell {
     public class ShellViewModel : Conductor<object>.Collection.AllActive {
         public ShellViewModel() {
-            Items.Add(new FileEditorViewModel());
-            Items.Add(new MyWorkspacesViewModel());
-            Items.Add(new SearchViewModel());
-            Main = Items[0];
-            SideBar = Items[1];
-            Widget = Items[2];
+            Main = new FileEditorViewModel();
+            SideBar = new MyWorkspacesViewModel();
+            Widget = new SearchViewModel();
+        }
+
+        protected override void OnActivate() {
+            ActivateItem(Main);
+            ActivateItem(SideBar);
+            ActivateItem(Widget);
         }
 
         public object SideBar { get; private set; }

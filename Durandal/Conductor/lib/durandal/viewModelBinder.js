@@ -1,5 +1,6 @@
 ﻿define(function(require) {
-    var system = require('durandal/system');
+    var system = require('durandal/system'),
+        ko = require('ko');
 
     return {
         bind: function(model, view) {

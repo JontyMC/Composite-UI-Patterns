@@ -9,8 +9,7 @@ namespace Conductor.Files {
 
         public ToolbarViewModel Toolbar { get; private set; }
 
-        public void LoadFiles()
-        {
+        public void LoadFiles() {
             Items.Clear();
             Items.Add(new TextFileViewModel("Some text file 1", Toolbar));
             Items.Add(new TextFileViewModel("Some text file 2", Toolbar));

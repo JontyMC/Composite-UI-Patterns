@@ -5,7 +5,8 @@
         dom = require('durandal/dom'),
         Modal = require('durandal/modal'),
         MessageBox = require('durandal/messageBox'),
-        Events = require('durandal/events');
+        Events = require('durandal/events'),
+        $ = require('jquery');
 
     var app = {
         showModal: function(viewModel) {
