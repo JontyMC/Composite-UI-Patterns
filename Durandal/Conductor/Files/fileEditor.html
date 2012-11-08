@@ -1,6 +1,6 @@
 <div>
     <div data-bind="compose: toolbar"/>
-    <div data-bind="tabBinding: {}">
+    <div data-bind="tabs: { binding: items }">
         <ul data-bind="foreach: items">
             <li>
                 <a data-bind="attr: { href: '#tab' + $index() }">
