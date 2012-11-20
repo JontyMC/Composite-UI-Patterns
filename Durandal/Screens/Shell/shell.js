@@ -1,9 +1,14 @@
 /*global require, define */
-define(['widgetpicker/widgetpicker', 'workspaces/myworkspaces', 'search/search'], function (widgetpicker, myworkspaces, search) {
+define(['search/search', 'workspaces/myworkspaces', 'widgetpicker/widgetpicker', 'durandal/viewModel', 'ko'], function (search, myworkspaces, widgetpicker, viewModel, ko) {
     'use strict';
-    return {
+    var vm = {
+        activeItem: viewModel.activator(),
         sidebar: myworkspaces,
-        main: widgetpicker,
-        widget: search
+        widget: search,
+        activate: function () {
+            vm.activeItem(widgetpicker);
+        }
     };
+
+    return vm;
 });

@@ -12,7 +12,35 @@
             }, Function.prototype.bind);
     }
 
+    requirejs.onResourceLoad = function(context, map, depArray) {
+        var module = context.defined[map.id];
+        if(!module) {
+            return;
+        }
+
+        if(system.isFunction(module)) {
+            module.prototype.__moduleId__ = map.id;
+            return;
+        }
+
+        if(typeof module == "string") {
+            return;
+        }
+
+        module.__moduleId__ = map.id;
+    };
+
     var system = {
+        getModuleId: function(obj) {
+            if (!obj) {
+                return null;
+            }
+
+            return obj.__moduleId__;
+        },
+        isFunction: function(thing) {
+            return typeof (thing) == "function";
+        },
         debug: function(enable) {
             if (arguments.length == 1) {
                 isDebugging = enable;

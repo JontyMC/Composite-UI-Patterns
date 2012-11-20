@@ -2,35 +2,50 @@
     var viewLocator = require('durandal/viewLocator'),
         viewModelBinder = require('durandal/viewModelBinder'),
         viewEngine = require('durandal/viewEngine'),
-        system = require('durandal/system');
+        system = require('durandal/system'),
+        ko = require('ko');
 
-    var binding = {
+    var composition = {
         switchContent: function(parent, newChild, settings) {
             if (!newChild) {
-                $(parent).empty();
+                ko.virtualElements.emptyNode(parent);
             } else {
-                $(parent).empty().append(newChild);
+                ko.virtualElements.setDomNodeChildren(parent, [newChild]);
 
-                if (settings.model && settings.model.viewAttached) {
-                    settings.model.viewAttached(newChild);
+                if (settings.model) {
+                    if (settings.activate && settings.model.activate) {
+                        system.log("Composition Activating", settings.model);
+                        settings.model.activate();
+                    }
+
+                    if (settings.model.viewAttached) {
+                        settings.model.viewAttached(newChild);
+                    }
                 }
             }
         },
         defaultStrategy: function(settings) {
-            return viewLocator.locateViewForModel(settings.model);
+            return viewLocator.locateViewForObject(settings.model);
         },
         getSettings: function(valueAccessor) {
             var settings = {},
                 value = ko.utils.unwrapObservable(valueAccessor()) || {};
 
             if (typeof value == 'string') {
-                settings = value;
-            } else {
-                for (var attrName in value) {
-                    if (typeof attrName == 'string') {
-                        var attrValue = ko.utils.unwrapObservable(value[attrName]);
-                        settings[attrName] = attrValue;
-                    }
+                return value;
+            }
+
+            var moduleId = system.getModuleId(value);
+            if (moduleId) {
+                return {
+                    model:value
+                };
+            }
+
+            for (var attrName in value) {
+                if (typeof attrName == 'string') {
+                    var attrValue = ko.utils.unwrapObservable(value[attrName]);
+                    settings[attrName] = attrValue;
                 }
             }
 
@@ -87,9 +102,10 @@
                 }
             }
 
-            if (settings && settings.__moduleId__) {
+            var moduleId = system.getModuleId(settings);
+            if (moduleId) {
                 settings = {
-                    model:settings
+                    model: settings
                 };
             }
 
@@ -104,10 +120,12 @@
                 }
             } else if (typeof settings.model == 'string') {
                 system.acquire(settings.model).then(function(module) {
-                    //TODO: is it an object or function?
-                    //if function, call as ctor
+                    if (typeof (module) == "function") {
+                        settings.model = new module();
+                    } else {
+                        settings.model = module;
+                    }
 
-                    settings.model = module;
                     that.inject(element, settings);
                 });
             } else {
@@ -118,10 +136,12 @@
 
     ko.bindingHandlers.compose = {
         update: function(element, valueAccessor, allBindingsAccessor, viewModel) {
-            var settings = binding.getSettings(valueAccessor);
-            binding.compose(element, settings, viewModel);
+            var settings = composition.getSettings(valueAccessor);
+            composition.compose(element, settings, viewModel);
         }
     };
 
-    return binding;
+    ko.virtualElements.allowedBindings.compose = true;
+
+    return composition;
 });

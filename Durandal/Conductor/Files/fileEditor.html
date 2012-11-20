@@ -1,12 +1,10 @@
 <div>
     <div data-bind="compose: toolbar"/>
-    <div data-bind="tabs: { binding: items }">
+    <div data-bind="tabs: items">
         <ul data-bind="foreach: items">
             <li>
                 <a data-bind="attr: { href: '#tab' + $index() }">
-                    <span data-bind="text: displayName"/>
-                    <span data-bind="visible: isDirty">*</span>
-                    <button data-bind="click: $parent.deactivateItem">x</button>
+                    <span>asdfasd</span>
                 </a>
             </li>
         </ul>

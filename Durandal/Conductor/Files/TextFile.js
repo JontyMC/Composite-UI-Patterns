@@ -1,12 +1,9 @@
 /*global require, define */
 define(['ko', 'extends', 'files/fileBase', 'files/toolbarButtons/SaveButton'], function (ko, extend, fileBase, SaveButton) {
     'use strict';
-    function TextFile(displayName, toolbar) {
-        fileBase.call(this, displayName, toolbar);
-        this.buttons = [new SaveButton(this)];
-        this.markAsDirty = this.markAsDirty.bind(this);
+    function TextFile(parent, displayName, toolbar) {
+        this.parent = parent;
     }
-    extend(TextFile, fileBase);
 
     TextFile.prototype.markAsDirty = function () {
         this.isDirty(true);

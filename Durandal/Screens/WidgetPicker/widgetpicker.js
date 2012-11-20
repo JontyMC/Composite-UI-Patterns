@@ -1,23 +1,18 @@
 /*global require, define, ko */
-define(['whatsnew/whatsnew', 'twitter/twitterfeed'], function (whatsnew, twitterfeed) {
+define(['whatsnew/whatsnew', 'twitter/twitterfeed', 'durandal/viewModel'], function (whatsnew, twitterfeed, viewModel) {
     'use strict';
     var vm = {
-		activeItem: ko.observable(),
+		activeItem: viewModel.activator(),
 		switchToWidget1: function () {
-			vm.activateItem(twitterfeed);
+			vm.activeItem(twitterfeed);
 		},
 		switchToWidget2: function () {
-			vm.activateItem(whatsnew);
+			vm.activeItem(whatsnew);
 		},
-		activateItem: function (item) {
-			if (item.onActivate) {
-				item.onActivate(item);
-			}
-			vm.activeItem(item);
-		}
+        activate: function () {
+            vm.switchToWidget1();
+        }
     };
-
-    vm.activateItem(twitterfeed);
 
     return vm;
 });

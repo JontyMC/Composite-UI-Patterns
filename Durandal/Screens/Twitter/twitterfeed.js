@@ -1,12 +1,12 @@
 /*global require, define, $, ko, setTimeout */
-define(['twitter/tweet'], function (Tweet) {
+define(['twitter/tweet', 'ko'], function (Tweet, ko) {
     'use strict';
 
     var vm = {
 		tweets: ko.observableArray(),
 		isBusy: ko.observable(false),
 
-		onActivate: function () {
+		activate: function () {
 			vm.refreshTweets();
 		},
 

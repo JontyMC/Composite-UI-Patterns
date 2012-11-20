@@ -1,11 +1,12 @@
-﻿define(['text', 'durandal/dom'], function() {
-    var dom = require('durandal/dom');
+﻿define(function(require) {
+    var dom = require('durandal/dom'),
+        text = require('text');
 
     return {
-        viewExtension:'.html',
-        pluginPath:'text',
-        createView:function(name, text) {
-            var element = dom.parseHTML(text);
+        viewExtension: '.html',
+        pluginPath: 'text',
+        createView: function(name, markup) {
+            var element = dom.parseHTML(markup);
             element.setAttribute('data-view', name);
             return element;
         }

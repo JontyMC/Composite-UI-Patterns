@@ -1,8 +1,9 @@
 /*global require, define */
 require.config({
     paths: {
-        "text": "lib/text",
-        "durandal": "lib/durandal"
+        text: 'lib/text',
+        durandal: 'lib/durandal',
+        ko: 'lib/knockout-2.1.0'
     }
 });
 

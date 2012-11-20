@@ -8,7 +8,7 @@ define(['ko'], function (ko) {
     }
 
     FileBase.prototype.onActivate = function () {
-        this.toolbar.setButtons(this.buttons);
+        //this.toolbar.setButtons(this.buttons);
     };
 
     FileBase.prototype.save = function () {
