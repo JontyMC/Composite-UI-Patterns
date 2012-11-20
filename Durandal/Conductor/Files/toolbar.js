@@ -1,19 +1,24 @@
 /*global require, define */
-define(['ko', 'jquery', 'files/toolbarButtons/DelegateButton', 'files/fileEditor'], function (ko, $, DelegateButton, fileEditor) {
+define(['ko', 'jquery', 'files/toolbarButtons/DelegateButton'], function (ko, $, DelegateButton) {
     'use strict';
-    var vm = {
-        buttons: ko.observableArray(),
+    function Toolbar(fileEditor) {
+        this.fileEditor = fileEditor;
+        this.buttons = ko.observableArray();
+        this.setButtons = this.setButtons.bind(this);
+    }
 
-        setButtons: function (buttons) {
-            vm.buttons.removeAll();
-            vm.buttons.push(new DelegateButton('Reset', function () {
-                fileEditor.loadFiles();
-            }));
-            $.each(buttons, function (i, button) {
-                vm.buttons.push(button);
+    Toolbar.prototype.setButtons = function (buttons) {
+        var that = this,
+            resetButton = new DelegateButton('Reset', this, function () {
+                that.fileEditor.activate();
             });
-        }
+
+        this.buttons.removeAll();
+        this.buttons.push(resetButton);
+        $.each(buttons, function (i, button) {
+            that.buttons.push(button);
+        });
     };
 
-    return vm;
+    return Toolbar;
 });

@@ -1,9 +1,14 @@
 /*global require, define */
-define(['files/fileEditor', 'workspaces/myWorkspaces', 'search/search'], function (fileEditor, myWorkspaces, search) {
+define(['files/fileEditor', 'workspaces/myWorkspaces', 'search/search', 'durandal/viewmodel'], function (fileEditor, myWorkspaces, search, viewModel) {
     'use strict';
-    return {
+    var vm = {
         sidebar: myWorkspaces,
-        main: fileEditor,
-        widget: search
+        activeItem: viewModel.activator(),
+        widget: search,
+        activate: function () {
+            vm.activeItem(fileEditor);
+        }
     };
+
+    return vm;
 });

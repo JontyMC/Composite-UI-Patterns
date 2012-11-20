@@ -61,6 +61,11 @@ header h1 {
 	background-color: #E6E6E6;
 }
 
+#main .ui-tabs {
+	font-size: 16px;
+	font-family: 'Segoe UI', Tahoma, Arial, Helvetica, Sans-Serif;
+}
+
 #widget {
 	position: absolute;
 	top: 24px;
@@ -74,4 +79,40 @@ header h1 {
 
 #widget p {
 	line-height: 50px;
+}
+
+#fileEditor {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+#fileEditor .toolbar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 32px;
+	right: 0;
+}
+#fileEditor .toolbar button {
+	float: left;
+	margin: 5px 0;
+}
+
+#fileEditor .tabs {
+	position: absolute;
+	top: 32px;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+#fileEditor .file {
+	position: relative;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
 }

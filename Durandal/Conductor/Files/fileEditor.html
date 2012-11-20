@@ -1,10 +1,13 @@
-<div>
-    <div data-bind="compose: toolbar"/>
-    <div data-bind="tabs: items">
+<div id="fileEditor">
+    <!-- ko compose: toolbar -->
+    <!-- /ko -->
+    <div class="tabs" data-bind="tabs: items">
         <ul data-bind="foreach: items">
             <li>
                 <a data-bind="attr: { href: '#tab' + $index() }">
-                    <span>asdfasd</span>
+                    <span data-bind="text: displayName"/>
+                    <span data-bind="visible: isDirty">*</span>
+                    <button data-bind="click: $parent.deactivateItem">x</button>
                 </a>
             </li>
         </ul>

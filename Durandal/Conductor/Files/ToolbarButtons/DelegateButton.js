@@ -1,8 +1,9 @@
 /*global require, define */
 define(function () {
     'use strict';
-    function DelegateButton(title, action) {
+    function DelegateButton(title, context, action) {
         this.title = title;
+        this.context = context;
         this.action = action;
         this.execute = this.execute.bind(this);
     }

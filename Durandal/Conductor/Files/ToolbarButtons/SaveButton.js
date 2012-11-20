@@ -8,7 +8,7 @@ define(function () {
     }
 
     SaveButton.prototype.execute = function () {
-        this.savable.Save();
+        this.savable.save();
     };
 
     return SaveButton;
