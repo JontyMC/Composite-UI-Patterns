@@ -1,5 +1,5 @@
 /*global require, define */
-define(['ko'], function (ko) {
+define(['ko', 'durandal/app'], function (ko, app) {
     'use strict';
     function FileBase(displayName, toolbar) {
         this.displayName = displayName;
@@ -7,10 +7,15 @@ define(['ko'], function (ko) {
         this.isDirty = ko.observable(false);
         this.activate = this.activate.bind(this);
         this.save = this.save.bind(this);
+        this.canDeactivate = this.canDeactivate.bind(this);
     }
 
     FileBase.prototype.activate = function () {
         this.toolbar.setButtons(this.buttons);
+    };
+
+    FileBase.prototype.canDeactivate = function () {
+        return !this.isDirty();
     };
 
     FileBase.prototype.save = function () {
