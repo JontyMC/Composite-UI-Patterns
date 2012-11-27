@@ -4,7 +4,7 @@ require.config({
         text: 'lib/text',
         durandal: 'lib/durandal',
         ko: 'lib/knockout-2.1.0',
-        jquery: 'lib/jqueryui/js/jquery-1.8.2'
+        jquery: 'lib/jquery-1.7.min'
     }
 });
 

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Caliburn.Micro;
 using Navigation.Events;
+using Navigation.Links;
 
 namespace Navigation.Shell {
     public class ShellViewModel : Conductor<object>.Collection.AllActive, IHandle<UrlChanged> {
@@ -10,6 +11,7 @@ namespace Navigation.Shell {
             var eventAggregator = new EventAggregator();
             eventAggregator.Subscribe(this);
             Widget = new AddressBarViewModel(eventAggregator);
+            SideBar = new LinksViewModel(eventAggregator);
         }
 
         public object SideBar { get; private set; }
