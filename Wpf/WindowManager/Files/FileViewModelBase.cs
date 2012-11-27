@@ -8,7 +8,7 @@ namespace WindowManager.Files {
         readonly IWindowManager windowManager;
 
         protected FileViewModelBase(ToolbarViewModel toolbar) {
-            this.toolbar = toolbar;
+            this.toolbar = toolbar; 
             windowManager = new Caliburn.Micro.WindowManager();
         }
 
