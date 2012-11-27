@@ -7,14 +7,14 @@ define(['ko', 'durandal/app'], function (ko, app) {
         this.isDirty = ko.observable(false);
         this.activate = this.activate.bind(this);
         this.save = this.save.bind(this);
-        this.canDeactivate = this.canDeactivate.bind(this);
+        this.canClose = this.canClose.bind(this);
     }
 
     FileBase.prototype.activate = function () {
         this.toolbar.setButtons(this.buttons);
     };
 
-    FileBase.prototype.canDeactivate = function () {
+    FileBase.prototype.canClose = function () {
         return !this.isDirty();
     };
 

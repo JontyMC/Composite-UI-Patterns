@@ -12,8 +12,10 @@ define(['files/Toolbar', 'files/TextFile', 'files/ImageFile', 'ko', 'durandal/vi
                 vm.items.push(new ImageFile(vm, 'An image', vm.toolbar));
             },
 
-            deactivateItem: function (item) {
-                activator.deactivateItem(item, true);
+            closeItem: function (item) {
+                if (item.canClose()) {
+                    activator.deactivateItem(item, true);
+                }
             },
 
             activateItem: function (item) {
