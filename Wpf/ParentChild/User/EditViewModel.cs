@@ -29,7 +29,7 @@ namespace ParentChild.User {
             }
         }
 
-        public void Edit() {
+        public void Save() {
             detailsViewModel.Firstname = Firstname;
             detailsViewModel.Lastname = Lastname;
             TryClose();
