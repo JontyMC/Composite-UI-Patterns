@@ -18,5 +18,9 @@ namespace Model.User {
             Lastname = lastname;
             eventAggregator.Publish(new UserDetailsUpdated(Id));
         }
+
+        public string UriFromId(int id) {
+            return "user/" + id;
+        }
     }
 }

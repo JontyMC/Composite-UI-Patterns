@@ -1,17 +1,16 @@
 using Caliburn.Micro;
-using Navigation.Events;
+using Model.Shell;
 
 namespace Navigation.Links {
     public class LinksViewModel : Screen {
-        readonly IEventAggregator eventAggregator;
+        readonly INavigationService navigationService;
 
-        public LinksViewModel(IEventAggregator eventAggregator) {
-            this.eventAggregator = eventAggregator;
+        public LinksViewModel(INavigationService navigationService) {
+            this.navigationService = navigationService;
         }
 
-        public void Go1(string url) {
-            var message = new UrlChanged(url);
-            eventAggregator.Publish(message);
+        public void Go(string url) {
+            navigationService.NavigateTo(url);
         }
     }
 }

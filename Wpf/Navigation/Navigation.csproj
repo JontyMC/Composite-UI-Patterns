@@ -90,8 +90,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Events\UrlChanged.cs" />
+    <Compile Include="Events\NavigationOccurred.cs" />
     <Compile Include="Shell\AddressBarViewModel.cs" />
+    <Compile Include="Shell\INavigationService.cs" />
+    <Compile Include="Shell\NavigationService.cs" />
     <Compile Include="Shell\NotFoundViewModel.cs" />
     <Compile Include="Shell\ShellViewModel.cs" />
     <Compile Include="Twitter\TweetTrackerViewModel.cs" />

@@ -1,14 +1,13 @@
 using Caliburn.Micro;
 using Model.Events;
+using Model.Links;
 
 namespace Model.Shell {
-    public class ShellViewModel : Conductor<object>.Collection.AllActive, IHandle<UrlChanged> {
-        readonly INavigationService navigation;
-
-        public ShellViewModel(IEventAggregator eventAggregator, INavigationService navigation) {
-            this.navigation = navigation;
+    public class ShellViewModel : Conductor<object>.Collection.AllActive, IHandle<NavigationOccurred> {
+        public ShellViewModel(IEventAggregator eventAggregator, LinksViewModel linksViewModel, AddressBarViewModel addressBarViewModel) {
             eventAggregator.Subscribe(this);
-            Widget = new AddressBarViewModel(eventAggregator);
+            Widget = addressBarViewModel;
+            SideBar = linksViewModel;
         }
 
         public object SideBar { get; private set; }
@@ -25,9 +24,9 @@ namespace Model.Shell {
             }
         }
 
-        public void Handle(UrlChanged message) {
+        public void Handle(NavigationOccurred message) {
             DeactivateItem(Main, true);
-            Main = navigation.ViewModelFromUrl(message.Url);
+            Main = message.ViewModel;
             ActivateItem(Main);
         }
     }

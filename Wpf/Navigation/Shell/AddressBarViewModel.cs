@@ -1,13 +1,14 @@
 using Caliburn.Micro;
+using Model.Shell;
 using Navigation.Events;
 
 namespace Navigation.Shell {
-    public class AddressBarViewModel : Screen, IHandle<UrlChanged> {
-        readonly IEventAggregator eventAggregator;
+    public class AddressBarViewModel : Screen, IHandle<NavigationOccurred> {
+        readonly INavigationService navigationService;
         string url;
 
-        public AddressBarViewModel(IEventAggregator eventAggregator) {
-            this.eventAggregator = eventAggregator;
+        public AddressBarViewModel(IEventAggregator eventAggregator, INavigationService navigationService) {
+            this.navigationService = navigationService;
             eventAggregator.Subscribe(this);
         }
 
@@ -20,11 +21,10 @@ namespace Navigation.Shell {
         }
 
         public void Go() {
-            var message = new UrlChanged(Url);
-            eventAggregator.Publish(message);
+            navigationService.NavigateTo(url);
         }
 
-        public void Handle(UrlChanged message) {
+        public void Handle(NavigationOccurred message) {
             Url = message.Url;
         }
     }

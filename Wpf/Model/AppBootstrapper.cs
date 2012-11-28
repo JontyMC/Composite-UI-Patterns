@@ -21,7 +21,7 @@ namespace Model {
                     new UserModel(2, "Remedy", "Malahide"),
                     new UserModel(3, "Peter", "O'Hanrahanrahan"),
                     new UserModel(4, "Ted", "Maul")
-                }))
+                }, _.Kernel.Get<IEventAggregator>()))
                 .InSingletonScope();
             kernel.Bind<INavigationService>().To<NavigationService>();
             kernel.Bind<IDetailsViewModelFactory>().ToFactory();

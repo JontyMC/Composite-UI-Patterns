@@ -1,10 +1,9 @@
 ﻿<UserControl x:Class="Navigation.Links.LinksView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
-             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity">
+             xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro">
     <StackPanel>
-        <Button cal:Message.Attach="Go1('whatsnew')">What's New</Button>
-        <Button cal:Message.Attach="Go1('twitterfeed')">Twitter Feed</Button>
+        <Button cal:Message.Attach="Go('whatsnew')">What's New</Button>
+        <Button cal:Message.Attach="Go('twitterfeed')">Twitter Feed</Button>
     </StackPanel>
 </UserControl>

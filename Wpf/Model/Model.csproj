@@ -75,9 +75,11 @@
     </Compile>
     <Compile Include="AppBootstrapper.cs" />
     <Compile Include="DebugLogger.cs" />
-    <Compile Include="Events\UrlChanged.cs" />
+    <Compile Include="Events\NavigationOccurred.cs" />
+    <Compile Include="Events\UserAdded.cs" />
     <Compile Include="Events\UserDetailsUpdated.cs" />
     <Compile Include="Framework\IRepository.cs" />
+    <Compile Include="Links\LinksViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -123,6 +125,10 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Links\LinksView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Shell\AddressBarView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
