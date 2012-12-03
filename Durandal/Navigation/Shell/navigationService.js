@@ -3,11 +3,11 @@ define(['whatsnew/whatsnew', 'twitter/twitterfeed', 'crossroads'], function (wha
     'use strict';
 
     var registerRoutes = function (shell) {
-            crossroads.addRoute('whatsnew', function (test) {
+            crossroads.addRoute('whatsnew', function () {
                 shell.activateItem(whatsnew);
             });
 
-            crossroads.addRoute('twitterfeed', function (test) {
+            crossroads.addRoute('twitterfeed', function () {
                 shell.activateItem(twitterfeed);
             });
         },

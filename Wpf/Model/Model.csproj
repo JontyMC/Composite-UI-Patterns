@@ -75,11 +75,14 @@
     </Compile>
     <Compile Include="AppBootstrapper.cs" />
     <Compile Include="DebugLogger.cs" />
+    <Compile Include="DomainModel\Events\UserAdded.cs" />
+    <Compile Include="DomainModel\Events\UserDetailsUpdated.cs" />
+    <Compile Include="DomainModel\User\IUserModelFactory.cs" />
     <Compile Include="Events\NavigationOccurred.cs" />
-    <Compile Include="Events\UserAdded.cs" />
-    <Compile Include="Events\UserDetailsUpdated.cs" />
     <Compile Include="Framework\IRepository.cs" />
     <Compile Include="Links\LinksViewModel.cs" />
+    <Compile Include="DomainModel\User\InMemoryUserRepository.cs" />
+    <Compile Include="DomainModel\User\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -104,8 +107,6 @@
     <Compile Include="User\IDetailsViewModelFactory.cs" />
     <Compile Include="User\EditViewModel.cs" />
     <Compile Include="User\IEditViewModelFactory.cs" />
-    <Compile Include="User\UserModel.cs" />
-    <Compile Include="User\InMemoryUserRepository.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

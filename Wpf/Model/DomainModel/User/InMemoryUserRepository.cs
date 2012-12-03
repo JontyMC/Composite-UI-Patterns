@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Caliburn.Micro;
-using Model.Events;
+using Model.DomainModel.Events;
 using Model.Framework;
 
-namespace Model.User {
+namespace Model.DomainModel.User {
     public class InMemoryUserRepository : IRepository<UserModel> {
         readonly ICollection<UserModel> users;
         readonly IEventAggregator eventAggregator;
@@ -25,10 +25,6 @@ namespace Model.User {
         public void Add(UserModel entity) {
             users.Add(entity);
             eventAggregator.Publish(new UserAdded(entity.Id));
-        }
-
-        public void Remove(UserModel entity) {
-            users.Remove(entity);
         }
     }
 }

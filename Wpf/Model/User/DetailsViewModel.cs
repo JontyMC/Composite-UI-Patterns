@@ -1,10 +1,11 @@
 using Caliburn.Micro;
+using Model.DomainModel.Events;
+using Model.DomainModel.User;
 using Model.Events;
 using Model.Framework;
 
 namespace Model.User {
     public class DetailsViewModel : Screen, IHandle<UserDetailsUpdated> {
-        readonly IAddViewModelFactory addViewModelFactory;
         readonly IRepository<UserModel> userRepository;
         readonly IEditViewModelFactory editViewModelFactory;
         readonly int userId;
@@ -12,13 +13,12 @@ namespace Model.User {
         string lastname;
         readonly IWindowManager windowManager;
 
-        public DetailsViewModel(IRepository<UserModel> userRepository, IEventAggregator eventAggregator, IAddViewModelFactory addViewModelFactory, IEditViewModelFactory editViewModelFactory, int userId) {
-            this.addViewModelFactory = addViewModelFactory;
+        public DetailsViewModel(IRepository<UserModel> userRepository, IEventAggregator eventAggregator, IEditViewModelFactory editViewModelFactory, IWindowManager windowManager, int userId) {
             this.userRepository = userRepository;
             this.editViewModelFactory = editViewModelFactory;
             this.userId = userId;
+            this.windowManager = windowManager;
             eventAggregator.Subscribe(this);
-            windowManager = new WindowManager();
         }
 
         public string Firstname {
@@ -39,11 +39,6 @@ namespace Model.User {
 
         public void Edit() {
             var editViewModel = editViewModelFactory.Create(userId);
-            windowManager.ShowDialog(editViewModel);
-        }
-
-         public void Add() {
-            var editViewModel = addViewModelFactory.Create(userId);
             windowManager.ShowDialog(editViewModel);
         }
 

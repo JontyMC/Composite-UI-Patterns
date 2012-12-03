@@ -1,9 +1,12 @@
-﻿using Caliburn.Micro;
-using Model.Events;
+using Caliburn.Micro;
+using Model.DomainModel.Events;
 
-namespace Model.User {
+namespace Model.DomainModel.User {
     public class UserModel {
-        public UserModel(int id, string firstname, string lastname) {
+        readonly IEventAggregator eventAggregator;
+
+        public UserModel(IEventAggregator eventAggregator, int id, string firstname, string lastname) {
+            this.eventAggregator = eventAggregator;
             Id = id;
             Firstname = firstname;
             Lastname = lastname;
@@ -13,14 +16,10 @@ namespace Model.User {
         public string Firstname { get; private set; }
         public string Lastname { get; private set; }
 
-        public void UpdateDetails(IEventAggregator eventAggregator, string firstname, string lastname) {
+        public void UpdateDetails(string firstname, string lastname) {
             Firstname = firstname;
             Lastname = lastname;
             eventAggregator.Publish(new UserDetailsUpdated(Id));
-        }
-
-        public string UriFromId(int id) {
-            return "user/" + id;
         }
     }
 }

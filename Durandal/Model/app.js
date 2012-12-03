@@ -1,5 +1,6 @@
 /*global require, define */
 require.config({
+    baseUrl: '/model/',
     paths: {
         text: 'lib/text',
         durandal: 'lib/durandal',
@@ -15,8 +16,10 @@ require.config({
     }
 });
 
-define(['durandal/app', 'jquery'], function (app) {
+define(['durandal/app', 'jquery', 'shell/navigationService'], function (app, $, navigationService) {
     'use strict';
+    navigationService.registerRoutes();
+
     app.start().then(function () {
         app.setRoot('shell/shell');
     });

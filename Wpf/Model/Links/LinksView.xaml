@@ -2,11 +2,14 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro">
-    <ItemsControl x:Name="Links">
-        <ItemsControl.ItemTemplate>
-            <DataTemplate>
-                <Button cal:Message.Attach="Go($dataContext)" Content="{Binding}"></Button>
-            </DataTemplate>
-        </ItemsControl.ItemTemplate>
-    </ItemsControl>
+    <StackPanel>
+        <Button x:Name="Add">Add</Button>
+        <ItemsControl x:Name="Links">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button cal:Message.Attach="Go($dataContext)" Content="{Binding}"></Button>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </StackPanel>
 </UserControl>

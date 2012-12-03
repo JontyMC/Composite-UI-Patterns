@@ -1,0 +1,6 @@
+<div>
+    <button data-bind="click: add">Add</button>
+    <ul data-bind="foreach: links">
+        <li><a data-bind="click: $parent.go, text: $data, attr: { href: $data }"></a></li>
+    </ul>
+</div>

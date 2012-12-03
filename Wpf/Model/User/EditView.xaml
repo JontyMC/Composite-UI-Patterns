@@ -12,7 +12,7 @@
             <TextBox x:Name="Lastname" Width="250"/>
         </StackPanel>
         <DockPanel>
-            <Button x:Name="Edit" Width="150" HorizontalAlignment="Right">Edit</Button>
+            <Button x:Name="Save" Width="150" HorizontalAlignment="Right">Save</Button>
             <Button x:Name="TryClose" Width="150" HorizontalAlignment="Right">Cancel</Button>
         </DockPanel>
     </StackPanel>

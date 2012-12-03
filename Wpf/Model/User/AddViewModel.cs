@@ -1,15 +1,18 @@
 using Caliburn.Micro;
+using Model.DomainModel.User;
 using Model.Framework;
 
 namespace Model.User {
     public class AddViewModel : Screen {
         readonly IRepository<UserModel> userRepository;
+        readonly IUserModelFactory userFactory;
         string firstname;
         string lastname;
         int id;
 
-        public AddViewModel(IRepository<UserModel> userRepository) {
+        public AddViewModel(IRepository<UserModel> userRepository, IUserModelFactory userFactory) {
             this.userRepository = userRepository;
+            this.userFactory = userFactory;
             DisplayName = "Edit";
         }
 
@@ -38,7 +41,7 @@ namespace Model.User {
         }
 
         public void Add() {
-            var user = new UserModel(id, firstname, lastname);
+            var user = userFactory.Create(id, firstname, lastname);
             userRepository.Add(user);
             TryClose();
         }

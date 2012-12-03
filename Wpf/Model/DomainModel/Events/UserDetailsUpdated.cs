@@ -1,4 +1,4 @@
-namespace Model.Events {
+namespace Model.DomainModel.Events {
     public class UserDetailsUpdated {
         public UserDetailsUpdated(int id) {
             Id = id;

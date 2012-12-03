@@ -5,6 +5,5 @@
         <TextBlock Text="{Binding Firstname, StringFormat=Firstname: {0}}"/>
         <TextBlock Text="{Binding Lastname, StringFormat=Lastname: {0}}"/>
         <Button x:Name="Edit" Width="150" HorizontalAlignment="Left">Edit</Button>
-        <Button x:Name="Add" Width="150" HorizontalAlignment="Left">Add</Button>
     </StackPanel>
 </UserControl>

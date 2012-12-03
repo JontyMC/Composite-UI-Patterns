@@ -1,17 +1,16 @@
 using Caliburn.Micro;
+using Model.DomainModel.User;
 using Model.Framework;
 
 namespace Model.User {
     public class EditViewModel : Screen {
-        readonly IEventAggregator eventAggregator;
         readonly IRepository<UserModel> userRepository;
         readonly int userId;
         string firstname;
         string lastname;
         UserModel user;
 
-        public EditViewModel(IEventAggregator eventAggregator, IRepository<UserModel> userRepository, int userId) {
-            this.eventAggregator = eventAggregator;
+        public EditViewModel(IRepository<UserModel> userRepository, int userId) {
             this.userRepository = userRepository;
             this.userId = userId;
             DisplayName = "Edit";
@@ -39,8 +38,8 @@ namespace Model.User {
             Lastname = user.Lastname;
         }
 
-        public void Edit() {
-            user.UpdateDetails(eventAggregator, Firstname, Lastname);
+        public void Save() {
+            user.UpdateDetails(Firstname, Lastname);
             TryClose();
         }
     }
