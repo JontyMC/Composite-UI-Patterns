@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://huddle.github.com/deck.js/boilerplate.html#slide-2 -->
+<html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths ready"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+
+	<title>Composite UI Patterns</title>
+	
+	<!-- All the styles for the Huddle presentation -->
+	<link rel="stylesheet" href="http://huddle.github.com/deck.js/assets/combined.css">
+	
+	<!-- Modernizr to make the most of browser features -->
+	<script src="./Presentation_files/modernizr.custom.js"></script>
+
+</head>
+<body class="deck-container deck-scale on-slide-slide-2 on-slide-2">
+
+<!-- Begin slides. Just make elements with a class of slide. -->
+
+
+<!-- adding an id attribute allows direct linking to slide -->
+<section class="slide deck-before" id="slide-title">
+	<div class="deck-slide-scaler" style=""><h1>
+		<img src="./Presentation_files/huddle_logo.jpg">
+		Composite UI Patterns
+	</h1></div>
+</section>
+
+<section class="slide section-intro deck-previous" id="slide-mvc-intro">
+	<div class="deck-slide-scaler" style=""><h1>MVC v MVP v MVVM</h1><h2>How do we get data to the screen?</h2></div>
+</section>
+
+<section class="slide deck-current" id="slide-mvc">
+	<div class="deck-slide-scaler" style=""><h2>MVC</h2><ul class="">
+		<!-- nested slide allow incremental reveal -->
+		<li class="slide deck-next" id="slide-mvc-11">
+			<h3>Write Slides</h3>
+			<p>Slide content is simple&nbsp;HTML.</p>
+		</li>
+	</ul></div>
+	
+</section>
+
+<section class="slide section-intro deck-previous" id="slide-shell-intro">
+	<div class="deck-slide-scaler" style=""><h1>Shell, Regions & Layouts</h1><h2>The UI composition root</h2></div>
+</section>
+
+<section class="slide deck-current" id="slide-shell">
+	<div class="deck-slide-scaler" style=""><h2>Shell</h2><ul class="">
+		<!-- nested slide allow incremental reveal -->
+		<li class="slide deck-next" id="slide-shell-1">
+			<h3>Application root layout</h3>
+			<p>Holds the primary UI content</p>
+		</li>
+		<li class="slide deck-after" id="slide-shell-2">
+			<h3>Contains application "chrome"</h3>
+			<p>Eg background, header/footer, main navigation, widgets, toolbars, etc</p>
+		</li>
+	</ul></div>
+</section>
+
+<section class="slide deck-current" id="slide-shell-diagram-1">
+	<div class="deck-slide-scaler" style="">
+		<img src="http://i.msdn.microsoft.com/dynimg/IC355075.png"/>
+	</div>
+</section>
+
+<section class="slide deck-current" id="slide-shell-diagram-2">
+	<div class="deck-slide-scaler" style="">
+		<img src="http://i.msdn.microsoft.com/dynimg/IC448656.png" style="height: 80%; width: 80%"/>
+	</div>
+</section>
+
+<section class="slide deck-current" id="slide-shell-implementations">
+	<div class="deck-slide-scaler" style=""><h2>Shell Implementations</h2><ul class="">
+		<!-- nested slide allow incremental reveal -->
+		<li class="slide deck-next" id="slide-shell-1">
+			<h3>WPF</h3>
+			<p>Window object</p>
+		</li>
+		<li class="slide deck-after" id="slide-shell-2">
+			<h3>Silverlight</h3>
+			<p>RootVisualUserControl</p>
+		</li>
+		<li class="slide deck-after" id="slide-shell-2">
+			<h3>Html/JS</h3>
+			<p>Application container element</p>
+		</li>
+	</ul></div>
+</section>
+
+<section class="slide deck-current" id="slide-regions">
+	<div class="deck-slide-scaler" style=""><h2>Regions</h2><ul class="">
+		<!-- nested slide allow incremental reveal -->
+		<li class="slide deck-next" id="slide-shell-1">
+			<h3>Container for dynamic content</h3>
+		</li>
+		<li class="slide deck-after" id="slide-shell-2">
+			<h3>Content is injected in at runtime</h3>
+		</li>
+		<li class="slide deck-after" id="slide-shell-2">
+			<h3>Allows loose coupling of UI components</h3>
+		</li>
+	</ul></div>
+</section>
+
+<section class="slide deck-current" id="slide-regions-diagram-1">
+	<div class="deck-slide-scaler" style="">
+		<img src="http://i.msdn.microsoft.com/dynimg/IC448646.png" style="height: 80%; width: 80%"/>
+	</div>
+</section>
+
+<section class="slide deck-current" id="slide-regions-diagram-2">
+	<div class="deck-slide-scaler" style="">
+		<img src="http://i.msdn.microsoft.com/dynimg/IC448608.png" style="height: 80%; width: 80%"/>
+	</div>
+</section>
+
+<section class="slide deck-current" id="slide-layouts">
+	<div class="deck-slide-scaler" style=""><h2>Layouts</h2><ul class="">
+		<!-- nested slide allow incremental reveal -->
+		<li class="slide deck-next" id="slide-layouts-1">
+			<h3>A region that contains other regions</h3>
+		</li>
+		<li class="slide deck-after" id="slide-layouts-2">
+			<h3>Similar to MasterPages</h3>
+		</li>
+	</ul></div>
+</section>
+
+<section class="slide section-intro deck-previous" id="slide-demo-regions">
+	<div class="deck-slide-scaler" style=""><h1>DEMO: Regions</h1></div>
+</section>
+
+<section class="slide section-intro deck-previous" id="slide-screens-intro">
+	<div class="deck-slide-scaler" style=""><h1>Screens</h1><h2>Erm...display stuff</h2></div>
+</section>
+
+<section class="slide deck-current" id="slide-screens">
+	<div class="deck-slide-scaler" style=""><h2>Screen</h2><ul class="">
+		<!-- nested slide allow incremental reveal -->
+		<li class="slide deck-next" id="slide-screens-1">
+			<h3>A stateful unit of work existing within the presentation tier of an application</h3>
+		</li>
+		<li class="slide deck-after" id="slide-screens-2">
+			<h3>Contains one or more related views</h3>
+		</li>
+		<li class="slide deck-after" id="slide-screens-3">
+			<h3>Examples:</h3>
+			<ul>
+				<li class="slide deck-after" id="slide-screens-ex-1">Dialogs</li>
+				<li class="slide deck-after" id="slide-screens-ex-2">Page in a browser</li>
+				<li class="slide deck-after" id="slide-screens-ex-3">Visual studio code editor window</li>
+			</ul>
+		</li>
+	</ul></div>
+</section>
+
+<section class="slide deck-current" id="slide-screen-activator">
+	<div class="deck-slide-scaler" style=""><h2>Screen Activator</h2><ul class="">
+		<!-- nested slide allow incremental reveal -->
+		<li class="slide deck-next" id="slide-screen-activator-1">
+			<h3>Screens often have an associated lifecycle</h3>
+		</li>
+		<li class="slide deck-next" id="slide-screen-activator-2">
+			<h3>Can require custom activation and deactivation</h3>
+		</li>
+		<li class="slide deck-next" id="slide-screen-activator-3">
+			<h3>Screen Activator performs the activation and deactivation of a screen</h3>
+		</li>
+	</ul></div>
+</section>
+
+<section class="slide deck-current" id="slide-screen-conductor">
+	<div class="deck-slide-scaler" style=""><h2>Screen Conductor</h2><ul class="">
+		<!-- nested slide allow incremental reveal -->
+		<li class="slide deck-next" id="slide-screen-conductor-1">
+			<h3>Manages transitions between screens</h3>
+		</li>
+		<li class="slide deck-next" id="slide-screen-conductor-2">
+			<h3>Responsible for activating and deactivating</h3>
+		</li>
+	</ul></div>
+</section>
+
+<section class="slide section-intro deck-previous" id="slide-demo-screens">
+	<div class="deck-slide-scaler" style=""><h1>DEMO: Screens</h1></div>
+</section>
+
+<section class="slide deck-current" id="slide-screen-collection">
+	<div class="deck-slide-scaler" style=""><h2>Screen Collection</h2><ul class="">
+		<!-- nested slide allow incremental reveal -->
+		<li class="slide deck-next" id="slide-screen-collection-1">
+			<h3>Maintains list of currently opened screens</h3>
+		</li>
+		<li class="slide deck-next" id="slide-screen-collection-2">
+			<h3>Typically works together with conductor:</h3>
+			<ul>
+				<li class="slide deck-after" id="slide-screens-collection-con-1">Opening a new document – add to collection, switch to active screen</li>
+				<li class="slide deck-after" id="slide-screens-collection-con-2">Closing a document – deactivate, remove from collection (as long as the CanClose method on the screen returns true)</li>
+			</ul>
+		</li>
+		<li class="slide deck-next" id="slide-screen-collection-3">
+			<h3>Databind to a UI component such as a TabControl</h3>
+		</li>
+	</ul></div>
+</section>
+
+<section class="slide section-intro deck-previous" id="slide-demo-screens">
+	<div class="deck-slide-scaler" style=""><h1>DEMO: Conductor</h1></div>
+</section>
+
+<section class="slide section-intro deck-previous" id="slide-window-manager-intro">
+	<div class="deck-slide-scaler" style=""><h1>Window Manager</h1><h2>Abstracting dialogs and modals</h2></div>
+</section>
+
+<section class="slide deck-current" id="slide-window-manager">
+	<div class="deck-slide-scaler" style=""><h2>Window Manager</h2><ul class="">
+		<!-- nested slide allow incremental reveal -->
+		<li class="slide deck-next" id="slide-window-manager-1">
+			<h3>Conductor for handling window management</h3>
+		</li>
+		<li class="slide deck-after" id="slide-window-manager-2">
+			<h3>Provides a consistent mechanism for activating screens in:</h3>
+			<ul>
+				<li class="slide deck-after" id="slide-window-manager-ex-1">Modal dialogs</li>
+				<li class="slide deck-after" id="slide-window-manager-ex-2">Pop ups</li>
+				<li class="slide deck-after" id="slide-window-manager-ex-3">Notifications (toast)</li>
+			</ul>
+		</li>
+	</ul></div>
+</section>
+
+<section class="slide section-intro deck-previous" id="slide-demo-window-manager">
+	<div class="deck-slide-scaler" style=""><h1>DEMO: Window Manager</h1></div>
+</section>
+
+<section class="slide section-intro deck-previous" id="slide-nav-intro">
+	<div class="deck-slide-scaler" style=""><h1>MVVM Navigation</h1><h2>Keeping application flow in the view model</h2></div>
+</section>
+
+<section class="slide deck-current" id="slide-nav">
+	<div class="deck-slide-scaler" style=""><h2>MVVM Navigation</h2><ul class="">
+		<!-- nested slide allow incremental reveal -->
+		<li class="slide deck-next" id="slide-nav-1">
+			<h3>Works in the following way:</h3>
+			<ol>
+				<li class="slide deck-after" id="slide-nav-ex-1">Front Controller listening to URI changes</li>
+				<li class="slide deck-after" id="slide-nav-ex-2">URI is translated into a view model instance</li>
+				<li class="slide deck-after" id="slide-nav-ex-3">URI parameters passed to view model constructor</li>
+				<li class="slide deck-after" id="slide-nav-ex-3">View model passed to shell conductor for activation</li>
+			</ol>
+		</li>
+		<li class="slide deck-next" id="slide-nav-2">
+			<h3>We can abstract this into a Navigation Service</h3>
+		</li>
+	</ul></div>
+</section>
+
+<section class="slide section-intro deck-previous" id="slide-demo-nav">
+	<div class="deck-slide-scaler" style=""><h1>DEMO: Navigation</h1></div>
+</section>
+
+<section class="slide section-intro deck-previous" id="slide-communication-intro">
+	<div class="deck-slide-scaler" style=""><h1>View Model Communication</h1><h2>How do we share data in a loosely coupled way across the UI?</h2></div>
+</section>
+
+<section class="slide deck-current" id="slide-communication">
+	<div class="deck-slide-scaler" style=""><h2>View Model Communication</h2><ul class="">
+		<!-- nested slide allow incremental reveal -->
+		<li class="slide deck-next" id="slide-communication-1">
+			<h3>4 different mechanisms:</h3>
+			<ul>
+				<li class="slide deck-after" id="slide-communication-ex-1">Direct references between view models</li>
+				<li class="slide deck-after" id="slide-communication-ex-2">Direct view model event subscriptions</li>
+				<li class="slide deck-after" id="slide-communication-ex-3">Event Aggregator</li>
+				<li class="slide deck-after" id="slide-communication-ex-3">Shared context</li>
+			</ul>
+		</li>
+		<li class="slide deck-next" id="slide-communication-2">
+			<h3>Each has trade offs</h3>
+			<p>Typically trading coupling and complexity</p>
+		</li>
+	</ul></div>
+</section>
+
+<section class="slide deck-current" id="slide-parent-child">
+	<div class="deck-slide-scaler" style=""><h2>Direct References</h2><ul class="">
+		<!-- nested slide allow incremental reveal -->
+		<li class="slide deck-next" id="slide-parent-child-1">
+			<h3>Maintain direct references to other view models and invoke methods or read properties on them</h3>
+		</li>
+		<li class="slide deck-next" id="slide-parent-child-2">
+			<h3>Pros:</h3>
+			<ul>
+				<li class="slide deck-after" id="slide-parent-child-pro-1">Simple to follow chain of execution</li>
+			</ul>
+		</li>
+		<li class="slide deck-next" id="slide-parent-child-3">
+			<h3>Cons:</h3>
+			<ul>
+				<li class="slide deck-after" id="slide-parent-child-con-1">Tight coupling</li>
+			</ul>
+		</li>
+	</ul></div>
+</section>
+
+<section class="slide section-intro deck-previous" id="slide-demo-parent-child">
+	<div class="deck-slide-scaler" style=""><h1>DEMO: Parent Child Direct References</h1></div>
+</section>
+
+<section class="slide deck-current" id="slide-events">
+	<div class="deck-slide-scaler" style=""><h2>Direct Event Subscription</h2><ul class="">
+		<!-- nested slide allow incremental reveal -->
+		<li class="slide deck-next" id="slide-events-1">
+			<h3>Depend on another view model and subscribe to events on it directly</h3>
+		</li>
+		<li class="slide deck-next" id="slide-events-2">
+			<h3>Pros:</h3>
+			<ul>
+				<li class="slide deck-after" id="slide-events-pro-1">Minimized afferent coupling</li>
+				<li class="slide deck-after" id="slide-events-pro-2">Open/Closed principle – easier to add new features without modifying existing code</li>
+			</ul>
+		</li>
+		<li class="slide deck-next" id="slide-events-3">
+			<h3>Cons:</h3>
+			<ul>
+				<li class="slide deck-after" id="slide-events-con-1">Efferent coupling</li>
+				<li class="slide deck-after" id="slide-events-con-2">Observer pattern obscures chain of execution</li>
+				<li class="slide deck-after" id="slide-events-con-3">Memory management – must explicitly unsubscribe</li>
+				<li class="slide deck-after" id="slide-events-con-4">Complex to use for request/response</li>
+			</ul>
+		</li>
+	</ul></div>
+</section>
+
+<section class="slide section-intro deck-previous" id="slide-demo-events">
+	<div class="deck-slide-scaler" style=""><h1>DEMO: Direct Event Subscription</h1></div>
+</section>
+
+<section class="slide deck-current" id="slide-aggregator">
+	<div class="deck-slide-scaler" style=""><h2>Event Aggregator</h2><ul class="">
+		<!-- nested slide allow incremental reveal -->
+		<li class="slide deck-next" id="slide-aggregator-1">
+			<h3>Channel events from multiple objects into a single object to simplify registration for clients</h3>
+		</li>
+		<li class="slide deck-next" id="slide-aggregator-2">
+			<h3>Subscribe to topics on the aggregator rather than having to reference the publisher directly</h3>
+		</li>
+		<li class="slide deck-next" id="slide-aggregator-3">
+			<h3>Variant of the mediator pattern</h3>
+			<p>Similar to command processor</p>
+		</li>
+		<li class="slide deck-next" id="slide-aggregator-4">
+			<h3>Pros:</h3>
+			<ul>
+				<li class="slide deck-after" id="slide-aggregator-pro-1">Minimized afferent and efferent coupling</li>
+				<li class="slide deck-after" id="slide-aggregator-pro-2">Open/Closed principle – easier to add new features without modifying existing code</li>
+				<li class="slide deck-after" id="slide-aggregator-pro-3">Simplifies event registration</li>
+				<li class="slide deck-after" id="slide-aggregator-pro-4">Makes unsubscribing of events easier</li>
+			</ul>
+		</li>
+		<li class="slide deck-next" id="slide-aggregator-5">
+			<h3>Cons:</h3>
+			<ul>
+				<li class="slide deck-after" id="slide-aggregator-con-1">Observer pattern obscures chain of execution</li>
+				<li class="slide deck-after" id="slide-aggregator-con-2">Memory management – must explicitly unsubscribe</li>
+				<li class="slide deck-after" id="slide-aggregator-con-3">Complex to use for request/response</li>
+				<li class="slide deck-after" id="slide-aggregator-con-3">Can be difficult to trace usages in un-typed languages</li>
+			</ul>
+		</li>
+	</ul></div>
+</section>
+
+<section class="slide section-intro deck-previous" id="slide-demo-aggregator">
+	<div class="deck-slide-scaler" style=""><h1>DEMO: Event Aggregator</h1></div>
+</section>
+
+<section class="slide deck-current" id="slide-model">
+	<div class="deck-slide-scaler" style=""><h2>Shared Context</h2><ul class="">
+		<!-- nested slide allow incremental reveal -->
+		<li class="slide deck-next" id="slide-model-1">
+			<h3>AKA the Model in MVVM</h3>
+		</li>
+		<li class="slide deck-next" id="slide-model-2">
+			<h3>Using a model prevents need to pass shared data between view models</h3>
+		</li>
+		<li class="slide deck-next" id="slide-model-3">
+			<h3>Downside is the view models are now coupled to a common component</h3>
+		</li>
+		<li class="slide deck-next" id="slide-model-4">
+			<h3>Negated by the fact that the model tends to be more stable than the views</h3>
+		</li>
+		<li class="slide deck-next" id="slide-model-5">
+			<h3>Typical usage:</h3>
+			<ul>
+				<li class="slide deck-after" id="slide-model-usgae-1">View model depends on repository to get model data</li>
+				<li class="slide deck-after" id="slide-model-usgae-2">View model specific mapper maps properties from model</li>
+			</ul>
+		</li>
+		<li class="slide deck-next" id="slide-model-6">
+			<h3>Use event aggregator to publish server events using signalR</h3>
+		</li>
+		<li class="slide deck-next" id="slide-model-7">
+			<h3>Offline mode – domain model in client</h3>
+		</li>
+		<li class="slide deck-next" id="slide-model-8">
+			<h3>Optionally implement a cache/identity map layer in repository</h3>
+		</li>
+	</ul></div>
+</section>
+
+<section class="slide section-intro deck-previous" id="slide-demo-model">
+	<div class="deck-slide-scaler" style=""><h1>DEMO: Model</h1></div>
+</section>
+
+<!-- End slides. -->
+
+<!-- deck.navigation snippet -->
+<a href="http://huddle.github.com/deck.js/boilerplate.html#slide-1" class="deck-prev-link" title="Previous">←</a>
+<a href="http://huddle.github.com/deck.js/boilerplate.html#slide-3" class="deck-next-link" title="Next">→</a>
+
+<!-- deck.status snippet -->
+<p class="deck-status">
+	<span class="deck-status-current">3</span>
+	/
+	<span class="deck-status-total">7</span>
+</p>
+
+<!-- deck.goto snippet -->
+<form action="http://huddle.github.com/deck.js/" method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"><option value="slide-0"></option><option value="slide-1"></option><option value="slide-2"></option><option value="slide-3"></option><option value="slide-4"></option><option value="slide-5"></option><option value="slide-6"></option></datalist>
+	<input type="submit" value="Go">
+</form>
+
+<!-- deck.hash snippet -->
+<a href="./Presentation_files/Presentation.htm" title="Permalink to this slide" class="deck-permalink">#</a>
+
+
+<!-- All the scripts to run the presentation -->
+<script src="./Presentation_files/combined-min.js"></script>
+
+
+</body></html>

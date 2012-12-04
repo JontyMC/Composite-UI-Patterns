@@ -5,9 +5,9 @@ using Regions.Workspaces;
 namespace Regions.Shell {
     public class ShellViewModel {
         public ShellViewModel() {
-            Main = new WhatsNewViewModel();
-            SideBar = new MyWorkspacesViewModel();
-            Widget = new SearchViewModel();
+            //Main = new WhatsNewViewModel();
+            //SideBar = new MyWorkspacesViewModel();
+            //Widget = new SearchViewModel();
         }
 
         public object SideBar { get; private set; }
