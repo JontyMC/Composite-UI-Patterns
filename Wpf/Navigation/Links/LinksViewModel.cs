@@ -1,5 +1,5 @@
 using Caliburn.Micro;
-using Model.Shell;
+using Navigation.Shell;
 
 namespace Navigation.Links {
     public class LinksViewModel : Screen {

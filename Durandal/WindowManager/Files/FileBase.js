@@ -1,5 +1,5 @@
 /*global require, define */
-define(['ko', 'durandal/app'], function (ko, app) {
+define(['ko', 'durandal/app'], function (ko, windowManager) {
     'use strict';
     function FileBase(displayName, toolbar) {
         this.displayName = displayName;
@@ -16,7 +16,7 @@ define(['ko', 'durandal/app'], function (ko, app) {
 
     FileBase.prototype.canClose = function () {
         if (this.isDirty()) {
-            return app.showMessage('Are you sure you want to close?', '', ['Yes', 'No']);
+            return windowManager.showMessage('Are you sure you want to close?', '', ['Yes', 'No']);
         }
         return true;
     };

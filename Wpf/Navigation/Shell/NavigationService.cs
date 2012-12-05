@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using System.Reflection;
 using Caliburn.Micro;
-using Model.Shell;
 using Navigation.Events;
 
 namespace Navigation.Shell {

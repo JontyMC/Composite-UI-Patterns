@@ -1,5 +1,4 @@
 using Caliburn.Micro;
-using Model.Shell;
 using Navigation.Events;
 
 namespace Navigation.Shell {
